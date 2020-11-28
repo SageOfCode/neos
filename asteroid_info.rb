@@ -1,6 +1,6 @@
  class AsteroidInfo 
   attr_reader :date
-  
+
   def initialize(date)
     @date = date
   end
@@ -50,4 +50,8 @@
   def create_rows(astroid_data, column_info)
     rows = astroid_data.each { |astroid| format_row_data(astroid, column_info) }
   end
+
+  def formated_date 
+    DateTime.parse(@date).strftime("%A %b %d, %Y")
+  end 
 end 
