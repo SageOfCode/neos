@@ -1,4 +1,5 @@
 require_relative 'near_earth_objects'
+require_relative 'asteroid_info'
 
 puts "________________________________________________________________________________________________________________________________"
 puts "Welcome to NEO. Here you will find information about how many meteors, astroids, comets pass by the earth every day. \nEnter a date below to get a list of the objects that have passed by the earth on that day."
@@ -11,7 +12,7 @@ print ">>"
 #   NearEarthObjects.find_neos_by_date(@date)
 # end 
 
-@asteroid_info = AsteroidInfo.new
+@asteroid_info = AsteroidInfo.new(@date)
 
 # def astroid_list 
 #   astroid_details[:astroid_list]
@@ -65,5 +66,5 @@ puts "The largest of these was #{@asteroid_info.largest_astroid} ft. in diameter
 puts "\nHere is a list of objects with details:"
 puts @asteroid_info.divider
 puts @asteroid_info.header
-create_rows(@asteroid_info.astroid_list, @asteroid_info.column_data)
+@asteroid_info.create_rows(@asteroid_info.astroid_list, @asteroid_info.column_data)
 puts @asteroid_info.divider

@@ -1,6 +1,12 @@
  class AsteroidInfo 
-  def astroid_details(date) 
-    NearEarthObjects.find_neos_by_date(date)
+  attr_reader :date
+  
+  def initialize(date)
+    @date = date
+  end
+
+  def astroid_details 
+    NearEarthObjects.find_neos_by_date(@date)
   end 
 
   def astroid_list 
