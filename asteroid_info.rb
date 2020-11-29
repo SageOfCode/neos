@@ -37,24 +37,7 @@
     end
   end 
 
-  # def header 
-  #   "| #{ column_data.map { |_,col| col[:label].ljust(col[:width]) }.join(' | ') } |"
-  # end 
-
-  # def divider 
-  #   "+-#{column_data.map { |_,col| "-"*col[:width] }.join('-+-') }-+"
-  # end 
-
-  # def format_row_data(row_data, column_info)
-  #   row = row_data.keys.map { |key| row_data[key].ljust(column_info[key][:width]) }.join(' | ')
-  #   puts "| #{row} |"
-  # end
-
   def create_rows(astroid_data, column_info)
     rows = astroid_data.each { |astroid| format_row_data(astroid, column_info) }
   end
-
-  # def formated_date 
-  #   DateTime.parse(@date).strftime("%A %b %d, %Y")
-  # end 
 end 
